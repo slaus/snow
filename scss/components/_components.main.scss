@@ -1,0 +1,1833 @@
+.banner {
+  margin-top: 70px;
+  background: url("../img/banner-bg.jpg") no-repeat center;
+  background-size: cover;
+  min-height: 628px;
+
+  @include mq(md) {
+    background: url("../img/banner-bg-tab.jpg") no-repeat center;
+    background-size: cover;
+  }
+
+  @include mq(s) {
+    background: url("../img/banner-bg-mob.jpg") no-repeat center;
+    background-size: cover;
+    margin-top: 58px;
+    min-height: 830px;
+  }
+
+  @include mq(xs) {
+    min-height: 628px;
+  }
+
+  h1 {
+    font-family: $ar, sans-serif;
+    font-size: 2.7rem;
+    color: rgb(42, 42, 42);
+    margin: 0 auto;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 2rem;
+
+    @include mq(md) {
+      font-size: 1.9rem;
+      padding-top: 4rem;
+      text-align: right;
+    }
+
+    @include mq(s) {
+      font-size: 1.2rem;
+      text-align: center;
+      padding-top: 1rem;
+    }
+
+    @include mq(xs) {
+      font-size: 1rem;
+    }
+  }
+
+  h3 {
+    font-family: $ab, sans-serif;
+    font-size: 3rem;
+    color: $new-price;
+    margin: 2rem auto;
+    text-align: center;
+    position: relative;
+    width: 294px;
+    padding: 0.5rem;
+
+    @include mq(md) {
+      margin: 2rem 0 2rem 57%;
+    }
+
+    @include mq(s) {
+      font-size: 38px;
+      width: 189px;
+      margin: 2rem auto;
+    }
+
+    span {
+      font-size: 4.5rem;
+
+      @include mq(s) {
+        font-size: 58px;
+      }
+    }
+  }
+
+  h3:before {
+    content: "";
+    border-top: 5px solid $new-price;
+    border-left: 5px solid $new-price;
+    width: 147px;
+    height: 130px;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @include mq(s) {
+      width: 97px;
+      height: 84px;
+    }
+  }
+
+  h3:after {
+    content: "";
+    border-bottom: 5px solid $new-price;
+    border-right: 5px solid $new-price;
+    width: 147px;
+    height: 130px;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    @include mq(s) {
+      width: 97px;
+      height: 84px;
+    }
+  }
+
+  .timer {
+    width: 100%;
+    max-width: 250px;
+    margin: 3rem auto;
+
+    @include mq(md) {
+      margin: 3rem 0 3rem 62%;
+    }
+
+    @include mq(s) {
+      margin: 3rem auto;
+      padding-top: 15rem;
+    }
+
+    @include mq(xs) {
+      padding-top: 6rem;
+    }
+
+    p.title {
+      font-family: $osr, sans-serif;
+      font-size: 19px;
+      color: #fff;
+      margin: 0.5rem auto;
+      text-align: center;
+
+      @include mq(s) {
+        color: #000;
+      }
+    }
+
+    &__timer {
+      width: 100%;
+      text-align: center;
+
+      div {
+        display: inline-block;
+        margin: 0 0.15rem;
+      }
+
+      p {
+        display: inline-block;
+        text-align: center;
+        font-family: $osl, sans-serif;
+        font-size: 27px;
+        margin: 0 0.05rem;
+        border: none;
+        background: rgba(19, 19, 19, 0.4);
+        @include border-radius(5px);
+        padding: 1.8px 4.5px;
+      }
+
+      span {
+        font-family: $osl, sans-serif;
+        font-size: 27px;
+        color: #fff;
+        margin: 0 auto;
+      }
+    }
+
+    &__name {
+      width: 100%;
+      max-width: 235px;
+      margin: 0.25rem auto;
+      @include flex;
+      @include justify-content(center);
+
+      span {
+        width: 25%;
+        text-align: center;
+        display: inline-block;
+        text-transform: uppercase;
+        font-family: $osl, sans-serif;
+        font-size: 9px;
+        color: rgb(38, 38, 38);
+      }
+    }
+
+    a {
+      text-decoration: none;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 0.5rem 1rem;
+      margin: 0.7rem auto;
+      border: 2px solid $new-price;
+      background-color: rgba(220, 220, 220, 0.38);
+      font-family: $ab, sans-serif;
+      font-size: 1rem;
+      color: $new-price;
+      display: block;
+    }
+
+    a:hover {
+      color: #fff;
+      background: $new-price;
+    }
+  }
+}
+
+.man-woman {
+  padding: 2rem 0;
+
+  @include mq(s) {
+    display: none;
+  }
+
+  .man-woman__block {
+    width: 100%;
+    max-width: 1359px;
+    margin: 0 auto;
+    @include flex;
+    @include justify-content(space-between);
+
+    &-man {
+      width: 48%;
+      overflow: hidden;
+      position: relative;
+      left: -150%;
+      opacity: 0;
+      transition: 0.5s;
+
+      @include mq(md) {
+        opacity: 1;
+        left: 0;
+      }
+    }
+
+    &-man:after {
+      content: "мужская парфюмерия";
+      text-transform: uppercase;
+      background-color: rgba(0, 0, 0, 0.62);
+      font-family: $osr, sans-serif;
+      font-size: 1.8rem;
+      color: #fff;
+      margin: 0 auto;
+      padding: 0.25rem 2rem 0.25rem 0;
+      width: 290px;
+      position: absolute;
+      top: 1rem;
+      right: 0;
+      text-align: right;
+
+      @include mq(md) {
+        font-size: 1.5rem;
+        width: 240px;
+      }
+    }
+
+    &-woman {
+      width: 48%;
+      overflow: hidden;
+      position: relative;
+      right: -150%;
+      opacity: 0;
+      transition: 0.5s;
+
+      @include mq(md) {
+        opacity: 1;
+        right: 0;
+      }
+    }
+
+    &-woman:after {
+      content: "женская парфюмерия";
+      text-transform: uppercase;
+      background-color: rgba(0, 0, 0, 0.62);
+      font-family: $osr, sans-serif;
+      font-size: 1.8rem;
+      color: #fff;
+      margin: 0 auto;
+      padding: 0.25rem 0rem 0.25rem 2rem;
+      width: 290px;
+      position: absolute;
+      top: 1rem;
+      left: 0;
+
+      @include mq(md) {
+        font-size: 1.5rem;
+        width: 240px;
+      }
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    img:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.top {
+
+  h3 {
+    font-family: $osr, sans-serif;
+    font-size: 1.8rem;
+    color: $title;
+    margin: 0 auto;
+    text-transform: uppercase;
+    text-align: center;
+
+    @include mq(xs) {
+      font-size: 1.2rem;
+    }
+  }
+
+  img {
+    display: block;
+    margin: 0.5rem auto;
+
+    @include mq(xs) {
+      width: 70%;
+    }
+  }
+
+  p {
+    font-family: $osr, sans-serif;
+    font-size: 0.9rem;
+    color: $title;
+    margin: 0 auto;
+    text-align: center;
+
+    @include mq(xs) {
+      font-size: 0.8rem;
+      width: 14rem;
+      margin: 0 auto;
+    }
+
+    span {
+      font-family: $osb, sans-serif;
+      color: $new-price;
+    }
+  }
+
+  @include mq(xs) {
+    .owl-dots {
+      text-align: center;
+      @include flex;
+      @include align-item(center);
+      @include justify-content(center);
+    }
+
+    .owl-dot {
+      width: 9px;
+      height: 9px;
+      display: inline-block;
+      background-color: rgb(184, 184, 184);
+      margin: 0.25rem;
+      @include border-radius(50%);
+      @include flex;
+      @include justify-content(center);
+      @include align-item(center);
+
+      span {
+        width: 9px;
+        height: 9px;
+        display: block;
+      }
+    }
+
+    .owl-dot.active {
+      background: transparent;
+      width: 15px;
+      height: 15px;
+      border: 1px solid rgb(73, 169, 229);
+
+      span {
+        background: rgb(73, 169, 229);
+        @include border-radius(50%);
+        width: 11px;
+        height: 11px;
+        display: block;
+      }
+    }
+  }
+
+  .owl-prev {
+    background: url("../img/prev.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: transparent;
+    width: 28px;
+    height: 67px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    left: -3rem;
+
+    @include mq(lg) {
+      left: -0.5rem;
+    }
+
+    @include mq(md) {
+      left: 0;
+    }
+  }
+
+  .owl-prev:hover {
+    background: url("../img/next.png");
+    transform: translateY(-50%) rotate(-180deg);
+    -webkit-transform: translateY(-50%) rotate(-180deg);
+  }
+
+  .owl-next {
+    background: url("../img/prev.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: transparent;
+    width: 28px;
+    height: 67px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(-180deg);
+    -webkit-transform: translateY(-50%) rotate(-180deg);
+    right: -3rem;
+
+    @include mq(lg) {
+      right: -0.5rem;
+    }
+
+    @include mq(md) {
+      right: 0;
+    }
+  }
+
+  .owl-next:hover {
+    background: url("../img/next.png");
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+  }
+
+  &__block {
+    padding: 2rem 0 0;
+
+    &-block {
+      border: 1px solid rgb(208, 208, 208);
+      background: #fff;
+      width: 259px;
+      padding: 1rem 0 0.5rem;
+      position: relative;
+      margin: 0 auto;
+
+      img {
+        display: block;
+        width: auto !important;
+        margin: 0 auto;
+      }
+
+      hr {
+        color: rgb(208, 208, 208);
+        width: 221px;
+        margin: 1rem auto;
+      }
+
+      h6 {
+        font-family: $osr, sans-serif;
+        font-size: 0.7rem;
+        color: rgb(32, 32, 32);
+        text-transform: uppercase;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      p {
+        font-family: $osr, sans-serif;
+        font-size: 0.7rem;
+        color: #fff;
+        text-transform: uppercase;
+        margin: 0.5rem auto;
+        text-align: center;
+        background: $new-price;
+        @include border-radius(2px);
+        width: 102px;
+        padding: 1px 0;
+      }
+
+      figure {
+        text-align: center;
+        margin: 0 auto;
+
+        span.old-price {
+          font-family: $osr, sans-serif;
+          font-size: 0.8rem;
+          color: rgb(72, 72, 72);
+          margin: 0 0.25rem;
+          display: inline-block;
+        }
+
+        span.new-price {
+          font-family: $osb, sans-serif;
+          font-size: 1.2rem;
+          color: $new-price;
+          margin: 0 0.25rem;
+        }
+      }
+
+      .top-filter {
+        border: 1px solid $menu-hover;
+        position: relative;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(148, 148, 148, 0.6);
+        display: none;
+        z-index: 2;
+
+        a {
+          display: block;
+          text-align: center;
+          text-decoration: none;
+          text-transform: uppercase;
+          font-family: $osr, sans-serif;
+          font-size: 1rem;
+          color: #fff;
+          border: 1px solid rgb(1, 179, 213);
+          background: rgb(1, 179, 213);
+          width: 176px;
+          padding: 0.5rem 0;
+          position: absolute;
+          top: 40%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          -webkit-transform: translate(-50%, -50%);
+        }
+
+        a:hover {
+          border: 1px solid rgb(12, 199, 235);
+          background-color: rgb(12, 199, 235);
+        }
+
+        a:nth-child(2) {
+          border: 1px solid #fff;
+          background-color: rgba(19, 19, 19, 0.412);
+          position: absolute;
+          top: 55%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          -webkit-transform: translate(-50%, -50%);
+        }
+
+        a:nth-child(2):hover {
+          color: $title;
+          background-color: #fff;
+        }
+      }
+    }
+
+    &-block:hover .top-filter {
+      display: block;
+    }
+
+    &-block:after {
+      content: url("../img/top.png");
+      position: absolute;
+      top: 10px;
+      left: 0;
+    }
+  }
+}
+
+.new {
+  padding: 4rem 0;
+
+  h3 {
+    font-family: $osr, sans-serif;
+    font-size: 1.8rem;
+    color: $title;
+    margin: 0 auto;
+    text-transform: uppercase;
+    text-align: center;
+
+    @include mq(xs) {
+      font-size: 1.2rem;
+    }
+  }
+
+  img {
+    display: block;
+    margin: 0.5rem auto;
+
+    @include mq(xs) {
+      width: 70%;
+    }
+  }
+
+  p {
+    font-family: $osr, sans-serif;
+    font-size: 0.9rem;
+    color: $title;
+    margin: 0 auto;
+    text-align: center;
+
+    @include mq(xs) {
+      font-size: 0.8rem;
+      width: 14rem;
+      margin: 0 auto;
+    }
+
+    span {
+      font-family: $osb, sans-serif;
+      color: $new-price;
+    }
+  }
+
+  @include mq(xs) {
+    .owl-dots {
+      text-align: center;
+      @include flex;
+      @include align-item(center);
+      @include justify-content(center);
+    }
+
+    .owl-dot {
+      width: 9px;
+      height: 9px;
+      display: inline-block;
+      background-color: rgb(184, 184, 184);
+      margin: 0.25rem;
+      @include border-radius(50%);
+      @include flex;
+      @include justify-content(center);
+      @include align-item(center);
+
+      span {
+        width: 9px;
+        height: 9px;
+        display: block;
+      }
+    }
+
+    .owl-dot.active {
+      background: transparent;
+      width: 15px;
+      height: 15px;
+      border: 1px solid rgb(73, 169, 229);
+
+      span {
+        background: rgb(73, 169, 229);
+        @include border-radius(50%);
+        width: 11px;
+        height: 11px;
+        display: block;
+      }
+    }
+  }
+
+  .owl-prev {
+    background: url("../img/prev.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: transparent;
+    width: 28px;
+    height: 67px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    left: -3rem;
+
+    @include mq(lg) {
+      left: -0.5rem;
+    }
+
+    @include mq(md) {
+      left: 0;
+    }
+  }
+
+  .owl-prev:hover {
+    background: url("../img/next.png");
+    transform: translateY(-50%) rotate(-180deg);
+    -webkit-transform: translateY(-50%) rotate(-180deg);
+  }
+
+  .owl-next {
+    background: url("../img/prev.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: transparent;
+    width: 28px;
+    height: 67px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(-180deg);
+    -webkit-transform: translateY(-50%) rotate(-180deg);
+    right: -3rem;
+
+    @include mq(lg) {
+      right: -0.5rem;
+    }
+
+    @include mq(md) {
+      right: 0;
+    }
+  }
+
+  .owl-next:hover {
+    background: url("../img/next.png");
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+  }
+
+  &__block {
+    padding: 2rem 0 0;
+
+    &-block {
+      border: 1px solid rgb(208, 208, 208);
+      background: #fff;
+      width: 259px;
+      padding: 1rem 0rem 0.5rem;
+      position: relative;
+      margin: 0 auto;
+
+      img {
+        display: block;
+        margin: 0 auto;
+        width: auto !important;
+      }
+
+      hr {
+        color: rgb(208, 208, 208);
+        width: 221px;
+        margin: 1rem auto;
+      }
+
+      h6 {
+        font-family: $osr, sans-serif;
+        font-size: 0.7rem;
+        color: rgb(32, 32, 32);
+        text-transform: uppercase;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      p {
+        font-family: $osr, sans-serif;
+        font-size: 0.7rem;
+        color: #fff;
+        text-transform: uppercase;
+        margin: 0.5rem auto;
+        text-align: center;
+        background: $new-price;
+        @include border-radius(2px);
+        width: 102px;
+        padding: 1px 0;
+      }
+
+      figure {
+        text-align: center;
+        margin: 0 auto;
+
+        span.old-price {
+          font-family: $osr, sans-serif;
+          font-size: 0.8rem;
+          color: rgb(72, 72, 72);
+          margin: 0 0.25rem;
+          display: inline-block;
+        }
+
+        span.new-price {
+          font-family: $osb, sans-serif;
+          font-size: 1.2rem;
+          color: $new-price;
+          margin: 0 0.25rem;
+        }
+      }
+
+      .new-filter {
+        border: 1px solid $menu-hover;
+        position: relative;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(148, 148, 148, 0.6);
+        display: none;
+        z-index: 2;
+
+        a {
+          display: block;
+          text-align: center;
+          text-decoration: none;
+          text-transform: uppercase;
+          font-family: $osr, sans-serif;
+          font-size: 1rem;
+          color: #fff;
+          border: 1px solid rgb(1, 179, 213);
+          background: rgb(1, 179, 213);
+          width: 176px;
+          padding: 0.5rem 0;
+          position: absolute;
+          top: 40%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          -webkit-transform: translate(-50%, -50%);
+        }
+
+        a:hover {
+          border: 1px solid rgb(12, 199, 235);
+          background-color: rgb(12, 199, 235);
+        }
+
+        a:nth-child(2) {
+          border: 1px solid #fff;
+          background-color: rgba(19, 19, 19, 0.412);
+          position: absolute;
+          top: 55%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          -webkit-transform: translate(-50%, -50%);
+        }
+
+        a:nth-child(2):hover {
+          color: $title;
+          background-color: #fff;
+        }
+      }
+    }
+
+    &-block:hover .new-filter {
+      display: block;
+    }
+
+    &-block:after {
+      content: url("../img/new.png");
+      position: absolute;
+      top: 10px;
+      left: 0;
+    }
+  }
+}
+
+.woman-banner {
+  background: url("../img/woman-banner-bg.jpg") no-repeat center;
+  background-size: cover;
+  min-height: 419px;
+
+  @include mq(md) {
+    background: url("../img/woman-banner-bg-tab.jpg") no-repeat center;
+    background-size: cover;
+  }
+
+  @include mq(s) {
+    background: url("../img/woman-banner-bg-mob.jpg") no-repeat center;
+    background-size: cover;
+  }
+
+  .container {
+    opacity: 0;
+    transition: 0.5s;
+
+    @include mq(md) {
+      opacity: 1;
+    }
+  }
+
+  h2 {
+    font-family: $ar, sans-serif;
+    font-size: 3rem;
+    color: rgb(45, 45, 45);
+    margin: 0 auto;
+    padding-top: 2rem;
+    text-transform: uppercase;
+    text-align: right;
+
+    @include mq(md) {
+      font-size: 2rem;
+    }
+
+    @include mq(s) {
+      font-size: 36px;
+      text-align: center;
+    }
+  }
+
+  h3 {
+    font-family: $ab, sans-serif;
+    font-size: 3rem;
+    color: $new-price;
+    margin: 1.5rem 0 1.5rem 778px;
+    text-align: center;
+    position: relative;
+    width: 294px;
+    padding: 0.5rem;
+
+    @include mq(lg) {
+      margin: 1.5rem 0 1.5rem 66%;
+    }
+
+    @include mq(md) {
+      margin: 1.5rem 0 1.5rem 57%;
+    }
+
+    @include mq(s) {
+      margin: 1.5rem auto;
+    }
+
+    @include mq(xs) {
+      width: 270px;
+      font-size: 2.5rem;
+    }
+
+    span {
+      font-size: 4.5rem;
+
+      @include mq(xs) {
+        font-size: 4rem;
+      }
+    }
+  }
+
+  h3:before {
+    content: "";
+    border-top: 5px solid $new-price;
+    border-left: 5px solid $new-price;
+    width: 147px;
+    height: 130px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  h3:after {
+    content: "";
+    border-bottom: 5px solid $new-price;
+    border-right: 5px solid $new-price;
+    width: 147px;
+    height: 130px;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .timer {
+    width: 100%;
+    max-width: 250px;
+    margin: 1rem 0 1rem 812px;
+
+    @include mq(lg) {
+      margin: 1.5rem 0 1.5rem 70%;
+    }
+
+    @include mq(md) {
+      margin: 1.5rem 0 1.5rem 62%;
+    }
+
+    @include mq(s) {
+      margin: 1.5rem auto;
+    }
+
+
+    p.title {
+      font-family: $osr, sans-serif;
+      font-size: 19px;
+      color: rgb(11, 11, 11);
+      margin: 0.5rem auto;
+      text-align: center;
+    }
+
+    &__timer {
+      width: 100%;
+      text-align: center;
+
+      div {
+        display: inline-block;
+        margin: 0 0.15rem;
+      }
+
+      p {
+        display: inline-block;
+        text-align: center;
+        font-family: $osl, sans-serif;
+        font-size: 27px;
+        margin: 0 0.05rem;
+        border: none;
+        background: rgba(31, 31, 31, 0.74);
+        @include border-radius(5px);
+        padding: 1.8px 4.5px;
+      }
+
+      span {
+        font-family: $osl, sans-serif;
+        font-size: 27px;
+        color: #fff;
+        margin: 0 auto;
+      }
+    }
+
+    &__name {
+      width: 100%;
+      max-width: 235px;
+      margin: 0.25rem auto;
+      @include flex;
+      @include justify-content(center);
+
+      span {
+        width: 25%;
+        text-align: center;
+        display: inline-block;
+        text-transform: uppercase;
+        font-family: $osl, sans-serif;
+        font-size: 9px;
+        color: rgb(38, 38, 38);
+      }
+    }
+  }
+}
+
+.woman-parf {
+  padding: 4rem 0;
+
+  @include mq(xs) {
+    padding: 1rem 0 4rem;
+  }
+
+  p {
+    font-family: $osr, sans-serif;
+    font-size: 0.9rem;
+    color: $title;
+    margin: 0 auto;
+    text-align: center;
+
+    @include mq(xs) {
+      font-size: 0.8rem;
+      width: 14rem;
+      margin: 0 auto;
+    }
+
+    span {
+      font-family: $osb, sans-serif;
+      color: $new-price;
+    }
+  }
+
+  img {
+    display: block;
+    margin: 0.5rem auto;
+
+    @include mq(xs) {
+      width: 70%;
+    }
+  }
+
+  &__block {
+    padding: 2rem 0;
+    @include flex;
+    @include justify-content(center);
+    @include flex-wrap;
+    height: 400px;
+    overflow: hidden;
+
+    @include mq(xs) {
+      height: 1960px;
+    }
+
+    &-block {
+      border: 1px solid rgb(208, 208, 208);
+      background: #fff;
+      width: 259px;
+      padding: 1rem 0 0.5rem;
+      position: relative;
+      margin: 1rem auto;
+
+      img {
+        display: block;
+        margin: 0 auto;
+      }
+
+      hr {
+        color: rgb(208, 208, 208);
+        width: 221px;
+        margin: 1rem auto;
+      }
+
+      h6 {
+        font-family: $osr, sans-serif;
+        font-size: 0.7rem;
+        color: rgb(32, 32, 32);
+        text-transform: uppercase;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      p {
+        font-family: $osr, sans-serif;
+        font-size: 0.7rem;
+        color: #fff;
+        text-transform: uppercase;
+        margin: 0.5rem auto;
+        text-align: center;
+        background: $new-price;
+        @include border-radius(2px);
+        width: 102px;
+        padding: 1px 0;
+      }
+
+      figure {
+        text-align: center;
+        margin: 0 auto;
+
+        span.old-price {
+          font-family: $osr, sans-serif;
+          font-size: 0.8rem;
+          color: rgb(72, 72, 72);
+          margin: 0 0.25rem;
+          display: inline-block;
+        }
+
+        span.new-price {
+          font-family: $osb, sans-serif;
+          font-size: 1.2rem;
+          color: $new-price;
+          margin: 0 0.25rem;
+        }
+      }
+
+      .woman-filter {
+        border: 1px solid $menu-hover;
+        position: relative;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(148, 148, 148, 0.6);
+        display: none;
+        z-index: 2;
+
+        a {
+          display: block;
+          text-align: center;
+          text-decoration: none;
+          text-transform: uppercase;
+          font-family: $osr, sans-serif;
+          font-size: 1rem;
+          color: #fff;
+          border: 1px solid rgb(1, 179, 213);
+          background: rgb(1, 179, 213);
+          width: 176px;
+          padding: 0.5rem 0;
+          position: absolute;
+          top: 40%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          -webkit-transform: translate(-50%, -50%);
+        }
+
+        a:hover {
+          border: 1px solid rgb(12, 199, 235);
+          background-color: rgb(12, 199, 235);
+        }
+
+        a:nth-child(2) {
+          border: 1px solid #fff;
+          background-color: rgba(19, 19, 19, 0.412);
+          position: absolute;
+          top: 55%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          -webkit-transform: translate(-50%, -50%);
+        }
+
+        a:nth-child(2):hover {
+          color: $title;
+          background-color: #fff;
+        }
+      }
+    }
+
+    &-block:hover .woman-filter {
+      display: block;
+    }
+
+    &-block:after {
+      content: url("../img/new.png");
+      position: absolute;
+      top: 10px;
+      left: 0;
+    }
+
+    &-block:nth-child(even):after {
+      content: url("../img/top.png");
+      position: absolute;
+      top: 10px;
+      left: 0;
+    }
+  }
+
+  button {
+    font-family: $osr, sans-serif;
+    font-size: 18px;
+    color: rgb(66, 66, 66);
+    margin: 0 auto;
+    border: 1px solid rgb(73, 169, 229);
+    background-color: rgb(180, 197, 215);
+    @include border-radius(17px);
+    width: 178px;
+    height: 33px;
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+    display: block;
+    position: relative;
+  }
+
+  button:before {
+    content: url("../img/down.png");
+    width: 14px;
+    height: 10px;
+    position: absolute;
+    right: 1rem;
+    top: 0.15rem;
+  }
+
+  button:hover {
+    background-color: rgb(73, 169, 229);
+  }
+}
+
+.man-banner {
+  background: url("../img/man-banner-bg.jpg") no-repeat center;
+  background-size: cover;
+  min-height: 416px;
+
+  @include mq(md) {
+    background: url("../img/man-banner-bg-tab.jpg") no-repeat center;
+    background-size: cover;
+  }
+
+  @include mq(s) {
+    background: url("../img/man-banner-bg-mob.jpg") no-repeat center;
+    background-size: cover;
+  }
+
+  .container {
+    opacity: 0;
+    transition: 0.5s;
+
+    @include mq(md) {
+      opacity: 1;
+    }
+  }
+
+  h2 {
+    font-family: $ar, sans-serif;
+    font-size: 3rem;
+    color: rgb(45, 45, 45);
+    margin: 0 auto;
+    padding-top: 2rem;
+    text-transform: uppercase;
+    text-align: right;
+
+    @include mq(md) {
+      font-size: 2rem;
+    }
+
+    @include mq(s) {
+      font-size: 36px;
+      text-align: center;
+    }
+  }
+
+  h3 {
+    font-family: $ab, sans-serif;
+    font-size: 3rem;
+    color: $new-price;
+    margin: 1.5rem 0 1.5rem 778px;
+    text-align: center;
+    position: relative;
+    width: 294px;
+    padding: 0.5rem;
+
+    @include mq(lg) {
+      margin: 1.5rem 0 1.5rem 66%;
+    }
+
+    @include mq(lg) {
+      margin: 1.5rem 0 1.5rem 57%;
+    }
+
+    @include mq(s) {
+      margin: 1.5rem auto;
+    }
+
+    @include mq(xs) {
+      width: 270px;
+      font-size: 2.5rem;
+    }
+
+    span {
+      font-size: 4.5rem;
+
+      @include mq(xs) {
+        font-size: 4rem;
+      }
+    }
+  }
+
+  h3:before {
+    content: "";
+    border-top: 5px solid $new-price;
+    border-left: 5px solid $new-price;
+    width: 147px;
+    height: 130px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  h3:after {
+    content: "";
+    border-bottom: 5px solid $new-price;
+    border-right: 5px solid $new-price;
+    width: 147px;
+    height: 130px;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .timer {
+    width: 100%;
+    max-width: 250px;
+    margin: 1rem 0 1rem 812px;
+
+    @include mq(lg) {
+      margin: 1.5rem 0 1.5rem 70%;
+    }
+
+    @include mq(md) {
+      margin: 1.5rem 0 1.5rem 62%;
+    }
+
+    @include mq(s) {
+      margin: 1.5rem auto;
+    }
+
+    p.title {
+      font-family: $osr, sans-serif;
+      font-size: 19px;
+      color: rgb(11, 11, 11);
+      margin: 0.5rem auto;
+      text-align: center;
+    }
+
+    &__timer {
+      width: 100%;
+      text-align: center;
+
+      div {
+        display: inline-block;
+        margin: 0 0.15rem;
+      }
+
+      p {
+        display: inline-block;
+        text-align: center;
+        font-family: $osl, sans-serif;
+        font-size: 27px;
+        margin: 0 0.05rem;
+        border: none;
+        background: rgba(31, 31, 31, 0.74);
+        @include border-radius(5px);
+        padding: 1.8px 4.5px;
+      }
+
+      span {
+        font-family: $osl, sans-serif;
+        font-size: 27px;
+        color: #fff;
+        margin: 0 auto;
+      }
+    }
+
+    &__name {
+      width: 100%;
+      max-width: 235px;
+      margin: 0.25rem auto;
+      @include flex;
+      @include justify-content(center);
+
+      span {
+        width: 25%;
+        text-align: center;
+        display: inline-block;
+        text-transform: uppercase;
+        font-family: $osl, sans-serif;
+        font-size: 9px;
+        color: rgb(38, 38, 38);
+      }
+    }
+  }
+}
+
+.man-parf {
+  padding: 4rem 0;
+
+  @include mq(xs) {
+    padding: 1rem 0 4rem;
+  }
+
+  p {
+    font-family: $osr, sans-serif;
+    font-size: 0.9rem;
+    color: $title;
+    margin: 0 auto;
+    text-align: center;
+
+    @include mq(xs) {
+      font-size: 0.8rem;
+      width: 14rem;
+      margin: 0 auto;
+    }
+
+    span {
+      font-family: $osb, sans-serif;
+      color: $new-price;
+    }
+  }
+
+  img {
+    display: block;
+    margin: 0.5rem auto;
+
+    @include mq(xs) {
+      width: 70%;
+    }
+  }
+
+  &__block {
+    padding: 2rem 0;
+    @include flex;
+    @include justify-content(center);
+    @include flex-wrap;
+    height: 400px;
+    overflow: hidden;
+
+    @include mq(xs) {
+      height: 1960px;
+    }
+
+    &-block {
+      border: 1px solid rgb(208, 208, 208);
+      background: #fff;
+      width: 259px;
+      padding: 1rem 0 0.5rem;
+      position: relative;
+      margin: 1rem auto;
+
+      img {
+        display: block;
+        margin: 0 auto;
+      }
+
+      hr {
+        color: rgb(208, 208, 208);
+        width: 221px;
+        margin: 1rem auto;
+      }
+
+      h6 {
+        font-family: $osr, sans-serif;
+        font-size: 0.7rem;
+        color: rgb(32, 32, 32);
+        text-transform: uppercase;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      p {
+        font-family: $osr, sans-serif;
+        font-size: 0.7rem;
+        color: #fff;
+        text-transform: uppercase;
+        margin: 0.5rem auto;
+        text-align: center;
+        background: $new-price;
+        @include border-radius(2px);
+        width: 102px;
+        padding: 1px 0;
+      }
+
+      figure {
+        text-align: center;
+        margin: 0 auto;
+
+        span.old-price {
+          font-family: $osr, sans-serif;
+          font-size: 0.8rem;
+          color: rgb(72, 72, 72);
+          margin: 0 0.25rem;
+          display: inline-block;
+        }
+
+        span.new-price {
+          font-family: $osb, sans-serif;
+          font-size: 1.2rem;
+          color: $new-price;
+          margin: 0 0.25rem;
+        }
+      }
+
+      .man-filter {
+        border: 1px solid $menu-hover;
+        position: relative;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(148, 148, 148, 0.6);
+        display: none;
+        z-index: 2;
+
+        a {
+          display: block;
+          text-align: center;
+          text-decoration: none;
+          text-transform: uppercase;
+          font-family: $osr, sans-serif;
+          font-size: 1rem;
+          color: #fff;
+          border: 1px solid rgb(1, 179, 213);
+          background: rgb(1, 179, 213);
+          width: 176px;
+          padding: 0.5rem 0;
+          position: absolute;
+          top: 40%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          -webkit-transform: translate(-50%, -50%);
+        }
+
+        a:hover {
+          border: 1px solid rgb(12, 199, 235);
+          background-color: rgb(12, 199, 235);
+        }
+
+        a:nth-child(2) {
+          border: 1px solid #fff;
+          background-color: rgba(19, 19, 19, 0.412);
+          position: absolute;
+          top: 55%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          -webkit-transform: translate(-50%, -50%);
+        }
+
+        a:nth-child(2):hover {
+          color: $title;
+          background-color: #fff;
+        }
+      }
+    }
+
+    &-block:hover .man-filter {
+      display: block;
+    }
+
+    &-block:after {
+      content: url("../img/new.png");
+      position: absolute;
+      top: 10px;
+      left: 0;
+    }
+
+    &-block:nth-child(odd):after {
+      content: url("../img/top.png");
+      position: absolute;
+      top: 10px;
+      left: 0;
+    }
+  }
+
+  button {
+    font-family: $osr, sans-serif;
+    font-size: 18px;
+    color: rgb(66, 66, 66);
+    margin: 0 auto;
+    border: 1px solid rgb(73, 169, 229);
+    background-color: rgb(180, 197, 215);
+    @include border-radius(17px);
+    width: 178px;
+    height: 33px;
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+    display: block;
+    position: relative;
+  }
+
+  button:before {
+    content: url("../img/down.png");
+    width: 14px;
+    height: 10px;
+    position: absolute;
+    right: 1rem;
+    top: 0.15rem;
+  }
+
+  button:hover {
+    background-color: rgb(73, 169, 229);
+  }
+}
+
+.clients {
+  background: url("../img/clients-bg.jpg") no-repeat center;
+  background-size: cover;
+  min-height: 631px;
+
+  @include mq(s) {
+    background: url("../img/clients-bg-mob.jpg") no-repeat center;
+    background-size: cover;
+    min-height: 500px;
+  }
+
+  @include mq(xs) {
+    min-height: 700px;
+  }
+
+  h3 {
+    font-family: $osr, sans-serif;
+    font-size: 1.8rem;
+    color: rgb(49, 49, 49);
+    margin: 0 auto;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 3rem;
+
+    @include mq(s) {
+      font-size: 1.2rem;
+    }
+  }
+
+  img {
+    display: block;
+    margin: 1rem auto;
+
+    @include mq(xs) {
+      width: 203px;
+    }
+  }
+
+  &__block {
+    @include flex;
+    @include justify-content(space-between);
+    @include align-item(center);
+    padding-top: 2rem;
+
+
+    &-block {
+      width: 45%;
+
+      @include mq(s) {
+        width: 90%;
+        margin: 0 auto;
+      }
+
+      p {
+        font-family: $osr, sans-serif;
+        font-size: 0.8rem;
+        color: rgb(36, 36, 36);
+        margin: 0 auto;
+        position: relative;
+        left: -150%;
+        opacity: 0;
+        transition: 0.5s;
+
+        @include mq(md) {
+          font-size: 0.7rem;
+          left: 0;
+          opacity: 1;
+        }
+      }
+
+      img {
+        display: block;
+        margin: 0 auto;
+        position: relative;
+        right: -150%;
+        opacity: 0;
+        transition: 0.5s;
+
+
+        @include mq(md) {
+          width: 100%;
+          right: 0;
+          opacity: 1;
+        }
+      }
+    }
+
+    &-block:nth-child(2) {
+      @include mq(s) {
+        display: none;
+      }
+    }
+  }
+}
+
+.work {
+  background: url("../img/work-bg.jpg") no-repeat center;
+  background-size: cover;
+  height: 630px;
+
+  @include mq(s) {
+    background: url("../img/work-bg-mob.jpg") no-repeat center;
+    background-size: cover;
+    height: 750px;
+  }
+
+  h3 {
+    font-family: $osr, sans-serif;
+    font-size: 1.8rem;
+    color: #fff;
+    margin: 0 auto;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 3rem;
+
+    @include mq(md) {
+      font-size: 1.5rem;
+    }
+
+    @include mq(s) {
+      font-size: 1.2rem;
+    }
+  }
+
+  img {
+    display: block;
+    margin: 1rem auto;
+
+    @include mq(s) {
+      width: 203px;
+    }
+  }
+
+  &__block {
+    @include flex;
+    @include justify-content(space-around);
+    margin: 2rem auto 1rem;
+    position: relative;
+    opacity: 0;
+    left: -150%;
+    transition: 0.5s;
+
+    @include mq(md) {
+      opacity: 1;
+      left: 0;
+    }
+
+    @include mq(s) {
+      @include flex-wrap;
+    }
+
+    &-block {
+
+      @include mq(s) {
+        width: 50%;
+      }
+
+      span {
+        font-family: $osr, sans-serif;
+        font-size: 24px;
+        color: #fff;
+        text-align: center;
+        margin: 1rem auto;
+        display: block;
+
+        @include mq(md) {
+          font-size: 18px;
+        }
+
+        @include mq(s) {
+          font-size: 14px;
+        }
+      }
+
+      img {
+        display: block;
+        margin: 0 auto;
+        box-shadow: 5px 5px 0px rgb(196, 196, 196);
+        -webkit-box-shadow: 5px 5px 0px rgb(196, 196, 196);
+        width: auto;
+      }
+
+      img:hover {
+        box-shadow: 10px 10px 0px rgb(196, 196, 196);
+        -webkit-box-shadow: 10px 10px 0px rgb(196, 196, 196);
+      }
+    }
+  }
+
+  p {
+    font-family: $osr, sans-serif;
+    font-size: 1rem;
+    color: #fff;
+    text-align: center;
+    margin: 0 auto;
+
+    @include mq(md) {
+      font-size: 16px;
+    }
+
+    @include mq(s) {
+      font-size: 14px;
+    }
+
+    span {
+      font-family: $osb, sans-serif;
+    }
+  }
+}
+

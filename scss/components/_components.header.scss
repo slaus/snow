@@ -1,0 +1,108 @@
+.header {
+  background: $header-bg;
+  padding: 0.8rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 9;
+
+  @include mq(s) {
+    padding: 0.5rem 0;
+  }
+
+  .container {
+    @include flex;
+    @include justify-content(space-between);
+    @include align-item(center);
+    opacity: 0;
+
+    @include mq(md) {
+      @include flex-wrap;
+      @include justify-content(center);
+      opacity: 1;
+    }
+
+    @include mq(s) {
+      @include justify-content(space-around);
+      position: relative;
+    }
+  }
+
+  &__logo {
+    img {
+      display: block;
+    }
+  }
+
+  &__menu {
+    width: 635px;
+    @include flex;
+    @include justify-content(space-between);
+    @include align-item(center);
+
+    @include mq(md) {
+      margin: 0.5rem auto 0;
+    }
+
+    @include mq(s) {
+      flex-direction: column;
+      display: none;
+    }
+
+    a {
+      text-decoration: none;
+      text-transform: uppercase;
+      font-family: $osr, sans-serif;
+      font-size: 0.6rem;
+      margin: 0 auto;
+      color: #fff;
+
+      @include mq(s) {
+        font-size: 1rem;
+        margin: 0.5rem auto;
+      }
+    }
+
+    a:hover {
+      color: $menu-hover;
+    }
+
+    button {
+      background-color: transparent;
+      font-family: $osr, sans-serif;
+      font-size: 0.65rem;
+      color: #fff;
+      border: 1px solid #fff;
+      width: 140px;
+      padding: 0.25rem 0;
+      cursor: pointer;
+      outline: none;
+
+      @include mq(s) {
+        margin: 0.5rem auto;
+      }
+    }
+
+    button:hover {
+      color: $menu-hover;
+      border: 1px solid $menu-hover;
+    }
+  }
+
+  &__menu-mob {
+    display: none;
+
+    @include mq(s) {
+      display: block;
+    }
+
+    .line {
+      background-color: rgb(255, 255, 255);
+      width: 30px;
+      height: 2px;
+      margin: 0.25rem auto;
+    }
+  }
+}

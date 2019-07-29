@@ -1,0 +1,41 @@
+.footer {
+  background: $header-bg;
+  padding: 1rem 0;
+
+  .container {
+    @include flex;
+    @include justify-content(space-between);
+
+    @include mq(md) {
+      @include flex-wrap;
+      @include justify-content(center);
+    }
+  }
+
+  p {
+    font-family: $a, sans-serif;
+    font-size: 0.7rem;
+    color: rgb(165, 165, 165);
+    margin: 0 auto;
+
+    @include mq(lg) {
+      font-size: 13px;
+    }
+
+    @include mq(md) {
+      font-size: 14px;
+      width: 100%;
+      text-align: center;
+      margin: 0.25rem auto;
+    }
+
+    @include mq(s) {
+      color: #fff;
+    }
+  }
+
+  p.politic {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
